@@ -1,5 +1,7 @@
 import { useState } from 'react';
-import TextInput from './TextInput';
+import SpeciesName from './SpeciesName';
+import PlanetName from './PlanetName';
+import NumberOfBeings from './NumberOfBeings';
 import W12MHeader from './W12MHeader';
 
 const W12MForm = () => {
@@ -8,9 +10,9 @@ const W12MForm = () => {
 			<W12MHeader />
 
 			<form>
-				<TextInput labelFor="sname" labelName="Species Name" id="sname" size="50" placeHolder="Species Name.." />
-				<TextInput labelFor="pname" labelName="Planet Name" id="pname" size="50" placeHolder="Planet Earth" />
-				<TextInput labelFor="num" labelName="Number Of beings" id="num" size="50" placeHolder="How many.." />
+				<SpeciesName />
+				<PlanetName />
+				<NumberOfBeings />
 				
 				<p>
 					<label htmlFor="notRobot">What is 2+2?</label>
