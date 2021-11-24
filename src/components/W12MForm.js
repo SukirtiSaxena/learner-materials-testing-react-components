@@ -3,30 +3,26 @@ import SpeciesName from './SpeciesName';
 import PlanetName from './PlanetName';
 import NumberOfBeings from './NumberOfBeings';
 import W12MHeader from './W12MHeader';
+import CheckIfRobot from './CheckIfRobot';
+import Reason from './Reason';
 
 const W12MForm = () => {
+	const [speciesName, setSpeciesName] = useState('humans');
+	const [planetName, setPlanetName] = useState('Earth');
+	const [numberOfBeings, setNumberOfBeings] = useState('1000000000');
+	const [checkIfRobot, setCheckIfRobot] = useState('4');
+	const [reason, setReason] = useState('');
+
 	return (
 		<section className='w12MForm'>
 			<W12MHeader />
-
 			<form>
-				<SpeciesName />
-				<PlanetName />
-				<NumberOfBeings />
-				
-				<p>
-					<label htmlFor="notRobot">What is 2+2?</label>
-					<select name="notRobot" id="notRobot">
-						<option value="notFour">Not 4</option>
-						<option value="four">4</option>
-					</select>
-					<span id="warning"></span>
-				</p>
-				<p>
-					<label htmlFor="reason">Reason for sparing</label>
-					<textarea id="reason" name="reason" row="4" cols="50" placeholder="Why..??" />
-					<span id="warning"></span>
-				</p>
+				<SpeciesName speciesName={speciesName} onChangeSpeciesName={(e) => setSpeciesName(e.target.value)} />
+				<PlanetName planetName={planetName} onChangePlanetName={(e) => setPlanetName(e.target.value)} />
+				<NumberOfBeings numberOfBeings={numberOfBeings} onChangeNumberOfBeings={(e) => setNumberOfBeings(e.target.value)} />
+				<CheckIfRobot checkIfRobot={checkIfRobot} onChangecheckIfRobot={(e) => setCheckIfRobot(e.target.value)}/>
+				<Reason reason={reason} onChangeReason={(e)=> setReason(e.target.value)}/>
+
 				<input type="submit" value="Submit" />
 			</form>
 		</section>
