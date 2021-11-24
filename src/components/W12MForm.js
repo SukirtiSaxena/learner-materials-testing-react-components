@@ -12,11 +12,14 @@ const W12MForm = () => {
 	const [numberOfBeings, setNumberOfBeings] = useState('1000000000');
 	const [checkIfRobot, setCheckIfRobot] = useState('4');
 	const [reason, setReason] = useState('');
+	const [message, setMessage] = useState('');
 
 	const handleSubmit = (event) => {
-        event.preventDefault();
-		console.log ("Full Input Data:", speciesName,planetName,numberOfBeings,checkIfRobot,reason)
-    }
+		event.preventDefault();
+		setMessage(`Thank you ${speciesName} from ${planetName} for your Form Submission. 
+		You are ${numberOfBeings} in number and you said 2+2 is ${checkIfRobot}.
+		Your reason for sparing is ${reason}.`);
+	}
 
 	return (
 		<section className='w12MForm'>
@@ -25,11 +28,15 @@ const W12MForm = () => {
 				<SpeciesName speciesName={speciesName} onChangeSpeciesName={(e) => setSpeciesName(e.target.value)} />
 				<PlanetName planetName={planetName} onChangePlanetName={(e) => setPlanetName(e.target.value)} />
 				<NumberOfBeings numberOfBeings={numberOfBeings} onChangeNumberOfBeings={(e) => setNumberOfBeings(e.target.value)} />
-				<CheckIfRobot checkIfRobot={checkIfRobot} onChangecheckIfRobot={(e) => setCheckIfRobot(e.target.value)}/>
-				<Reason reason={reason} onChangeReason={(e)=> setReason(e.target.value)}/>
+				<CheckIfRobot checkIfRobot={checkIfRobot} onChangecheckIfRobot={(e) => setCheckIfRobot(e.target.value)} />
+				<Reason reason={reason} onChangeReason={(e) => setReason(e.target.value)} />
 
 				<input type="submit" value="Submit" />
 			</form>
+
+			<p>
+				{message}
+			</p>
 		</section>
 	);
 };
