@@ -13,10 +13,15 @@ const W12MForm = () => {
 	const [checkIfRobot, setCheckIfRobot] = useState('4');
 	const [reason, setReason] = useState('');
 
+	const handleSubmit = (event) => {
+        event.preventDefault();
+		console.log ("Full Input Data:", speciesName,planetName,numberOfBeings,checkIfRobot,reason)
+    }
+
 	return (
 		<section className='w12MForm'>
 			<W12MHeader />
-			<form>
+			<form onSubmit={handleSubmit}>
 				<SpeciesName speciesName={speciesName} onChangeSpeciesName={(e) => setSpeciesName(e.target.value)} />
 				<PlanetName planetName={planetName} onChangePlanetName={(e) => setPlanetName(e.target.value)} />
 				<NumberOfBeings numberOfBeings={numberOfBeings} onChangeNumberOfBeings={(e) => setNumberOfBeings(e.target.value)} />
