@@ -8,3 +8,8 @@ test('renders header text', () => {
 	);
 	expect(labelText).toBeInTheDocument();
 });
+
+test('renders Input box on screen with id as speciesName', () => {
+	render(<SpeciesName />);
+	expect(screen.getAllByRole('textbox').find(i=>i.id === "speciesName")).toBeInTheDocument();
+});

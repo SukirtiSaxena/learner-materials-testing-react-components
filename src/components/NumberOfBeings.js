@@ -4,8 +4,8 @@ function NumberOfBeings({ numberOfBeings, onChangeNumberOfBeings }) {
         <p>
             <label htmlFor="NumberOfBeings">Number Of Beings : </label>
             <input type="text"
-                id="NumberOfBeings"
-                name="NumberOfBeings"
+                id="numberOfBeings"
+                name="numberOfBeings"
                 size="50"
                 placeholder="Number Of Beings.."
                 value={numberOfBeings}
