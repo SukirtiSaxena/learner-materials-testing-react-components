@@ -11,5 +11,5 @@ test('renders header text', () => {
 
 test('renders Text Area on screen with id as planetName', () => {
 	render(<PlanetName />);
-	expect(screen.getAllByRole('textbox').find(i=>i.id === "planetName")).toBeInTheDocument();
+	expect(screen.getByPlaceholderText('Planet Name..')).toBeInTheDocument();
 });

@@ -1,4 +1,5 @@
 import { render, screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 import SpeciesName from './SpeciesName';
 
 test('renders header text', () => {
@@ -11,5 +12,6 @@ test('renders header text', () => {
 
 test('renders Input box on screen with id as speciesName', () => {
 	render(<SpeciesName />);
-	expect(screen.getAllByRole('textbox').find(i=>i.id === "speciesName")).toBeInTheDocument();
+	expect(screen.getByPlaceholderText('Species Name..')).toBeInTheDocument();
 });
+

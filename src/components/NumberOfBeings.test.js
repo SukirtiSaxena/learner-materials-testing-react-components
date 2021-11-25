@@ -11,5 +11,5 @@ test('renders header text', () => {
 
 test('renders Text Area on screen with id as numberOfBeings', () => {
 	render(<NumberOfBeings />);
-	expect(screen.getAllByRole('textbox').find(i=>i.id === "numberOfBeings")).toBeInTheDocument();
+	expect(screen.getByPlaceholderText('Number Of Beings..')).toBeInTheDocument();
 });
