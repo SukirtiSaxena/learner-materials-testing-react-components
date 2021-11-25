@@ -15,3 +15,14 @@ test('renders Input box on screen with id as speciesName', () => {
 	expect(screen.getByPlaceholderText('Species Name..')).toBeInTheDocument();
 });
 
+/* test('If OnChange function is called for Input Component - SpeciesName', () => {
+	const mockOnChange = jest.fn();
+	const propSpecies = {
+		value:'',
+		onChange: mockOnChange
+	};
+
+	render(<SpeciesName {...propSpecies} />);
+	userEvent.type(screen.getByPlaceholderText('Species Name..'), 'Human');
+	expect(mockOnChange).toHaveBeenCalledTimes(5);
+}); */
