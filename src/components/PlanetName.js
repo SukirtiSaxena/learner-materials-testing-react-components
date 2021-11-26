@@ -4,9 +4,6 @@ function PlanetName({ planetName, onChangePlanetName }) {
     const [errorMessage, setErrorMessage] = useState('');
 
     const validate = (value) => {
-        if (value.trim() === '') {
-            return `Planet Name is required`;
-        }
         if (value.trim().length < 2) {
             return `Planet Name needs to be at least two characters`;
         }
@@ -36,7 +33,7 @@ function PlanetName({ planetName, onChangePlanetName }) {
                     }
                 />
             </p>
-            <p id="warning"> {errorMessage} </p>
+            <p data-testid="warning"> {errorMessage} </p>
         </section>
     )
 }

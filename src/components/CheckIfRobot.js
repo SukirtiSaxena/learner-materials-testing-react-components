@@ -29,7 +29,7 @@ function CheckIfRobot({ checkIfRobot, onChangecheckIfRobot }) {
                     <option value="4" data-testid="opt2">4</option>
                 </select>
             </p>
-            <p id="warning"> {errorMessage}  </p>
+            <p data-testid="warning"> {errorMessage}  </p>
         </section>
     )
 }

@@ -4,14 +4,11 @@ function NumberOfBeings({ numberOfBeings, onChangeNumberOfBeings }) {
     const [errorMessage, setErrorMessage] = useState('');
 
     const validate = (value) => {
-        if (value.trim() === '') {
-            return `Number of Beings is required`;
-        }
         if (/[^0-9 -]/.test(value)) {
             return 'Invalid characters. Enter only Numbers';
         }
         if (value < 1000000000) {
-            return `Number of Beings needs to be at least  1,000,000,000`;
+            return `Number of Beings needs to be at least 1,000,000,000`;
         }
     }
     return (
@@ -32,7 +29,7 @@ function NumberOfBeings({ numberOfBeings, onChangeNumberOfBeings }) {
                     }
                 />
             </p>
-            <p id="warning"> {errorMessage} </p>
+            <p data-testid="warning"> {errorMessage} </p>
         </section>
     )
 }

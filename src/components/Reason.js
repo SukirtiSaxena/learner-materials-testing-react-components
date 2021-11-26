@@ -3,9 +3,6 @@ import { useState } from 'react';
 function Reason({ reason, onChangeReason }) {
     const [errorMessage, setErrorMessage] = useState('');
     const validate = (value) => {
-        if (value.trim() === '') {
-            return `Reason is required`;
-        }
         if (value.trim().length < 17) {
             return `Reason to Spare needs to be more than 17 letters.`;
         }
@@ -33,7 +30,7 @@ function Reason({ reason, onChangeReason }) {
                     }
                 />
             </p>
-            <p id="warning"> {errorMessage} </p>
+            <p data-testid="warning"> {errorMessage} </p>
         </section>
     )
 }
