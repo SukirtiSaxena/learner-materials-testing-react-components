@@ -8,15 +8,14 @@ function PlanetName({ planetName, onChangePlanetName }) {
             return `Planet Name is required`;
         }
         if (value.trim().length < 2) {
-            return `Species Name needs to be at least two characters`;
+            return `Planet Name needs to be at least two characters`;
         }
         if (value.trim().length > 49) {
-            return `Species Name needs to be less than 49 characters`;
+            return `Planet Name needs to be less than 49 characters`;
         }
         if (/[^a-zA-Z0-9 -]/.test(value)) {
             return 'Invalid characters';
         }
-
     }
 
     return (
@@ -37,7 +36,7 @@ function PlanetName({ planetName, onChangePlanetName }) {
                     }
                 />
             </p>
-            <error id="warning"> {errorMessage} </error>
+            <p id="warning"> {errorMessage} </p>
         </section>
     )
 }

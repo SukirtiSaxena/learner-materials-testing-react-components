@@ -36,7 +36,7 @@ function SpeciesName({ speciesName, onChangeSpeciesName }) {
                     }
                 />
             </p>
-            <error id="warning"> {errorMessage} </error>
+            <p id="warning"> {errorMessage} </p>
         </section>
     )
 }

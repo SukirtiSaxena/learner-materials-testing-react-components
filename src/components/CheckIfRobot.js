@@ -4,10 +4,9 @@ function CheckIfRobot({ checkIfRobot, onChangecheckIfRobot }) {
     const [errorMessage, setErrorMessage] = useState('');
 
     const validate = (value) => {
-        if (value.trim() === 'Not 4') {
-            return `Exterminate!!! Exterminate!! Exterminate!`;
+        if (value === 'Not 4') {
+            return `Exterminate! Exterminate!! Exterminate!!! Answer should be 4!!`;
         }
-
     }
 
     return (
@@ -16,6 +15,7 @@ function CheckIfRobot({ checkIfRobot, onChangecheckIfRobot }) {
                 <label htmlFor="notRobot">What is 2+2?</label>
                 <select name="notRobot"
                     id="notRobot"
+                    data-testid="notRobot"
                     value={checkIfRobot}
                     onChange={(e) => {
                         const errorMessage = validate(e.target.value);
@@ -25,11 +25,11 @@ function CheckIfRobot({ checkIfRobot, onChangecheckIfRobot }) {
                     }
                 >
 
-                    <option value="Not 4">Not 4</option>
-                    <option value="4">4</option>
+                    <option value="Not 4" data-testid="opt1">Not 4</option>
+                    <option value="4" data-testid="opt2">4</option>
                 </select>
             </p>
-            <error id="warning"> {errorMessage}  </error>
+            <p id="warning"> {errorMessage}  </p>
         </section>
     )
 }

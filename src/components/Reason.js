@@ -7,10 +7,10 @@ function Reason({ reason, onChangeReason }) {
             return `Reason is required`;
         }
         if (value.trim().length < 17) {
-            return `Species Name needs to be more than 17`;
+            return `Reason to Spare needs to be more than 17 letters.`;
         }
         if (value.trim().length > 153) {
-            return `Species Name needs to be less than 153`;
+            return `Reason needs to be less than 153 letters.`;
         }
 
     }
@@ -33,7 +33,7 @@ function Reason({ reason, onChangeReason }) {
                     }
                 />
             </p>
-            <error id="warning"> {errorMessage} </error>
+            <p id="warning"> {errorMessage} </p>
         </section>
     )
 }
