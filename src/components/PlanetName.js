@@ -1,19 +1,8 @@
 import { useState } from 'react';
+import validate from '../validation';
 
 function PlanetName({ planetName, onChangePlanetName }) {
     const [errorMessage, setErrorMessage] = useState('');
-
-    const validate = (value) => {
-        if (value.trim().length < 2) {
-            return `Planet Name needs to be at least two characters`;
-        }
-        if (value.trim().length > 49) {
-            return `Planet Name needs to be less than 49 characters`;
-        }
-        if (/[^a-zA-Z0-9 -]/.test(value)) {
-            return 'Invalid characters';
-        }
-    }
 
     return (
         <section>
@@ -26,7 +15,7 @@ function PlanetName({ planetName, onChangePlanetName }) {
                     placeholder="Planet Name.."
                     value={planetName}
                     onChange={(e) => {
-                        const errorMessage = validate(e.target.value);
+                        const errorMessage = validate(e.target.value, e.target.id);
                         setErrorMessage(errorMessage);
                         onChangePlanetName(e);
                     }

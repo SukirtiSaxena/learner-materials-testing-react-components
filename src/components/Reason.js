@@ -1,16 +1,9 @@
 import { useState } from 'react';
+import validate from '../validation';
 
 function Reason({ reason, onChangeReason }) {
     const [errorMessage, setErrorMessage] = useState('');
-    const validate = (value) => {
-        if (value.trim().length < 17) {
-            return `Reason to Spare needs to be more than 17 letters.`;
-        }
-        if (value.trim().length > 153) {
-            return `Reason needs to be less than 153 letters.`;
-        }
 
-    }
     return (
         <section>
             <p>
@@ -23,7 +16,7 @@ function Reason({ reason, onChangeReason }) {
                     placeholder="Why..??"
                     value={reason}
                     onChange={(e) => {
-                        const errorMessage = validate(e.target.value);
+                        const errorMessage = validate(e.target.value, e.target.id);
                         setErrorMessage(errorMessage);
                         onChangeReason(e);
                     }

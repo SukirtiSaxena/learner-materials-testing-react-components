@@ -1,22 +1,8 @@
 import { useState } from 'react';
+import validate from '../validation';
 
 function SpeciesName({ speciesName, onChangeSpeciesName }) {
     const [errorMessage, setErrorMessage] = useState('');
-
-    const validate = (value) => {
-        if (value.trim() === '') {
-            return `Species Name is required`;
-        }
-        if (/[^a-zA-Z -]/.test(value)) {
-            return 'Invalid characters';
-        }
-        if (value.trim().length < 3) {
-            return `Species Name needs to be at least three characters`;
-        }
-        if (value.trim().length > 23) {
-            return `Species Name needs to be less than twenty three characters`;
-        }
-    }
 
     return (
         <section>
@@ -29,7 +15,7 @@ function SpeciesName({ speciesName, onChangeSpeciesName }) {
                     placeholder="Species Name.."
                     value={speciesName}
                     onChange={(e) => {
-                        const errorMessage = validate(e.target.value);
+                        const errorMessage = validate(e.target.value, e.target.id);
                         setErrorMessage(errorMessage);
                         onChangeSpeciesName(e);
                     }

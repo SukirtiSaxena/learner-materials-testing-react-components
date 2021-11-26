@@ -24,14 +24,14 @@ const W12MForm = () => {
 	return (
 		<section className='w12MForm'>
 			<W12MHeader />
-			<form onSubmit={handleSubmit}>
+			<form data-testid="form" onSubmit={handleSubmit}>
 				<SpeciesName speciesName={speciesName} onChangeSpeciesName={(e) => setSpeciesName(e.target.value)} />
 				<PlanetName planetName={planetName} onChangePlanetName={(e) => setPlanetName(e.target.value)} />
 				<NumberOfBeings numberOfBeings={numberOfBeings} onChangeNumberOfBeings={(e) => setNumberOfBeings(e.target.value)} />
 				<CheckIfRobot checkIfRobot={checkIfRobot} onChangecheckIfRobot={(e) => setCheckIfRobot(e.target.value)} />
 				<Reason reason={reason} onChangeReason={(e) => setReason(e.target.value)} />
 
-				<input type="submit" value="Submit" />
+				<button type="submit">Submit</button>
 			</form>
 
 			<p>

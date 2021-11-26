@@ -1,13 +1,8 @@
 import { useState } from 'react';
+import validate from '../validation';
 
 function CheckIfRobot({ checkIfRobot, onChangecheckIfRobot }) {
     const [errorMessage, setErrorMessage] = useState('');
-
-    const validate = (value) => {
-        if (value === 'Not 4') {
-            return `Exterminate! Exterminate!! Exterminate!!! Answer should be 4!!`;
-        }
-    }
 
     return (
         <section>
@@ -18,7 +13,7 @@ function CheckIfRobot({ checkIfRobot, onChangecheckIfRobot }) {
                     data-testid="notRobot"
                     value={checkIfRobot}
                     onChange={(e) => {
-                        const errorMessage = validate(e.target.value);
+                        const errorMessage = validate(e.target.value, e.target.id);
                         setErrorMessage(errorMessage);
                         onChangecheckIfRobot(e);
                     }
