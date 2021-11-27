@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import validate from '../validation';
 
-function Input({label,id,placeholder, name, onChangeName }) {
+function Input({ label, id, placeholder, value, onChangeName }) {
     const [errorMessage, setErrorMessage] = useState('');
 
     return (
@@ -13,11 +13,11 @@ function Input({label,id,placeholder, name, onChangeName }) {
                     name={id}
                     size="50"
                     placeholder={placeholder}
-                    value={name}
+                    value={value}
                     onChange={(e) => {
                         const errorMessage = validate(e.target.value, e.target.id);
                         setErrorMessage(errorMessage);
-                        onChangeName(e);
+                        onChangeName(e.target.value);
                     }
                     }
                 />

@@ -4,10 +4,10 @@ const validate = (value, id) => {
         if (/[^a-zA-Z -]/.test(value)) {
             return 'Invalid characters';
         }
-        if (value.trim().length < 3) {
+        if (value.length < 3) {
             return `Species Name needs to be at least three characters`;
         }
-        if (value.trim().length > 23) {
+        if (value.length > 23) {
             return `Species Name needs to be less than twenty three characters`;
         }
     }

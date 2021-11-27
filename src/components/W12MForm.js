@@ -28,20 +28,20 @@ const W12MForm = () => {
 					id="speciesName"
 					label="Species Name : "
 					placeholder="Species Name.."
-					onChangeName={(e) => setSpeciesName(e.target.value)} />
+					onChangeName={setSpeciesName} />
 
 				<Input name={planetName}
 					id="planetName"
 					label="Planet Name : "
 					placeholder="Planet Name.."
-					onChangeName={(e) => setPlanetName(e.target.value)} />
+					onChangeName={setPlanetName} />
 
 
 				<Input name={numberOfBeings}
 					id="numberOfBeings"
 					label="Number Of Beings : "
 					placeholder="Number Of Beings.."
-					onChangeName={(e) => setNumberOfBeings(e.target.value)} />
+					onChangeName={setNumberOfBeings} />
 
 
 				<CheckIfRobot checkIfRobot={checkIfRobot}
