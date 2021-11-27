@@ -1,9 +1,6 @@
 
 const validate = (value, id) => {
     if (id === 'speciesName') {
-        if (value.trim() === '') {
-            return `Species Name is required`;
-        }
         if (/[^a-zA-Z -]/.test(value)) {
             return 'Invalid characters';
         }
@@ -40,7 +37,7 @@ const validate = (value, id) => {
         if (/[^0-9 -]/.test(value)) {
             return 'Invalid characters. Enter only Numbers';
         }
-        if (value < 1000000000) {
+        if (Number(value) < 1000000000) {
             return `Number of Beings needs to be at least 1,000,000,000`;
         }
     }

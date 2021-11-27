@@ -1,23 +1,23 @@
 import { useState } from 'react';
 import validate from '../validation';
 
-function NumberOfBeings({ numberOfBeings, onChangeNumberOfBeings }) {
+function Input({label,id,placeholder, name, onChangeName }) {
     const [errorMessage, setErrorMessage] = useState('');
 
     return (
         <section>
             <p>
-                <label htmlFor="NumberOfBeings">Number Of Beings : </label>
+                <label htmlFor={id}>{label}</label>
                 <input type="text"
-                    id="numberOfBeings"
-                    name="numberOfBeings"
+                    id={id}
+                    name={id}
                     size="50"
-                    placeholder="Number Of Beings.."
-                    value={numberOfBeings}
+                    placeholder={placeholder}
+                    value={name}
                     onChange={(e) => {
                         const errorMessage = validate(e.target.value, e.target.id);
                         setErrorMessage(errorMessage);
-                        onChangeNumberOfBeings(e);
+                        onChangeName(e);
                     }
                     }
                 />
@@ -26,5 +26,4 @@ function NumberOfBeings({ numberOfBeings, onChangeNumberOfBeings }) {
         </section>
     )
 }
-
-export default NumberOfBeings
+export default Input
